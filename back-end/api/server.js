@@ -25,7 +25,7 @@ app.get("/api/songs", async (request, response) => {
 
 app.use(express.static(path.join(__dirname, "../front-end/dist")));
 
-app.get(":", async (request, response) => {
+app.get("/{*any}", async (request, response) => {
   response.sendFile(path.join(__dirname, "../front-end/dist/index.html"));
 });
 
